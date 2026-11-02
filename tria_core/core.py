@@ -1,18 +1,10 @@
-"""TRIA core logic, pure Python. No Streamlit, no network, no judge built in.
+"""TRIA core logic, pure Python.
 
-A judge is a callable you supply. TRIA core does not choose your judge.
-Your judge can be Gemini, OpenAI, Groq, another model, or a human label
-wrapped in code. TRIA core only turns lens scores into a decision and
-a gate action, against SOP + Policy.
-
-Judge callable signature:
-    judge(customer_request, sop_policy, agent_reply, lens) -> (score, reasoning)
-    score: float, 0.0 to 1.0
-    reasoning: str, why the score was given
-
-Lens: a dict with at least "name", "pass_looks_like", "fail_looks_like".
-Set "needs_policy" to False only if the lens can be judged without SOP + Policy.
+Judge callable: judge(customer_request, sop_policy, agent_reply, lens) -> (score, reasoning)
+Score: float 0.0 to 1.0. Lens: dict with name, pass_looks_like, fail_looks_like.
+Set needs_policy to False only if the lens can be judged without SOP + Policy.
 """
+
 
 from dataclasses import dataclass, field
 

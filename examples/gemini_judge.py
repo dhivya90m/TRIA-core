@@ -1,17 +1,5 @@
-"""Example judge only. Not part of TRIA core, and not imported by it.
+"""Reference judge implementation. Key: GEMINI_API_KEY or GOOGLE_API_KEY, from the environment only."""
 
-Reads the API key from an environment variable, never from code:
-    GEMINI_API_KEY or GOOGLE_API_KEY
-
-Uses only the Python standard library, so no extra package is needed.
-If the key is missing, or the model call fails, this raises an error.
-TRIA core then marks that lens ERROR, the decision becomes INCOMPLETE,
-and the gate says NOT SENT. It never guesses a decision.
-
-To use it, an engineer copies this pattern into their own backend,
-with their own model, key handling, and prompt, and passes
-gemini_judge to score_reply as the judge.
-"""
 
 import json
 import os

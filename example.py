@@ -1,9 +1,5 @@
-"""TRIA core example. No API key, no network. A stub judge stands in
-for a real judge, so you can read the decision and gate logic in full.
+"""Example. Stub judge. No API key, no network."""
 
-Replace stub_judge with your own judge (Gemini, OpenAI, Groq, or
-another model) using the same signature, and the rest stays the same.
-"""
 
 from tria_core import score_reply
 
