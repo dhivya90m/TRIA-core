@@ -31,6 +31,10 @@ def judge(customer_request, sop_policy, agent_reply, lens):
 
 Your judge can be Gemini, OpenAI, Groq, another model, or a human label wrapped in code. TRIA core does not care which model wrote the reply, or which model judges it. SOP + Policy is the ground truth.
 
+## Example judge, optional
+
+`examples/gemini_judge.py` shows the pattern, using only the Python standard library. It reads the key from `GEMINI_API_KEY` or `GOOGLE_API_KEY` in the environment, never from code. It is an example only, not part of TRIA core, and TRIA core does not import it. If the model call fails, it raises an error, TRIA core marks that lens ERROR, the decision becomes INCOMPLETE, and the gate says NOT SENT.
+
 ## Example, no API key needed
 
 ```bash
